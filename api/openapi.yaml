@@ -13,8 +13,8 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-- description: wabli-community-52201
-  url: https://83.212.100.226:5001/v1
+- description: wabli-bme-1
+  url: https://83.212.100.226:4001/v1
 security:
 - {}
 tags:
