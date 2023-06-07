@@ -1,5 +1,5 @@
-const WelcomeentityController = require('./WelcomeentityController');
+const UserController = require('./UserController');
 
 module.exports = {
-  WelcomeentityController,
+  UserController,
 };

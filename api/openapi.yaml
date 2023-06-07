@@ -13,22 +13,22 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-- description: wabli-bme-4
-  url: https://83.212.100.226:4004/v1
+- description: local-host
+  url: http://localhost:8090/v1
 security:
 - {}
 tags:
 - description: not yet ready
-  name: welcomeentity
+  name: user
 paths:
-  /welcomeentity:
+  /user:
     post:
-      operationId: createwelcomeentity
+      operationId: createuser
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/welcomeentity'
+              $ref: '#/components/schemas/user'
         description: data to be created
         required: true
       responses:
@@ -36,20 +36,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/welcomeentity'
+                $ref: '#/components/schemas/user'
           description: successful operation
       summary: Creates the data
       tags:
-      - welcomeentity
-      x-eov-operation-handler: controllers/WelcomeentityController
-  /welcomeentity/{welcomeentityId}:
+      - user
+      x-eov-operation-handler: controllers/UserController
+  /user/{userId}:
     delete:
-      operationId: deletewelcomeentity
+      operationId: deleteuser
       parameters:
       - description: the Id parameter
         explode: false
         in: path
-        name: welcomeentityId
+        name: userId
         required: true
         schema:
           type: string
@@ -59,15 +59,15 @@ paths:
           description: successful operation
       summary: Delete the element
       tags:
-      - welcomeentity
-      x-eov-operation-handler: controllers/WelcomeentityController
+      - user
+      x-eov-operation-handler: controllers/UserController
     get:
-      operationId: getwelcomeentity
+      operationId: getuser
       parameters:
       - description: the Id parameter
         explode: false
         in: path
-        name: welcomeentityId
+        name: userId
         required: true
         schema:
           type: string
@@ -77,19 +77,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/welcomeentity'
+                $ref: '#/components/schemas/user'
           description: successful operation
       summary: Get the element
       tags:
-      - welcomeentity
-      x-eov-operation-handler: controllers/WelcomeentityController
+      - user
+      x-eov-operation-handler: controllers/UserController
     put:
-      operationId: updatewelcomeentity
+      operationId: updateuser
       parameters:
       - description: the Id parameter
         explode: false
         in: path
-        name: welcomeentityId
+        name: userId
         required: true
         schema:
           type: string
@@ -98,39 +98,39 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/welcomeentity'
+              $ref: '#/components/schemas/user'
         description: data to be updated
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/welcomeentity'
+                $ref: '#/components/schemas/user'
           description: successful operation
       summary: Updates the element
       tags:
-      - welcomeentity
-      x-eov-operation-handler: controllers/WelcomeentityController
-  /welcomeentity/getAll:
+      - user
+      x-eov-operation-handler: controllers/UserController
+  /user/getAll:
     get:
-      operationId: getAllwelcomeentity
+      operationId: getAlluser
       responses:
         "200":
           content:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/welcomeentity'
+                  $ref: '#/components/schemas/user'
                 type: array
           description: successful operation
       summary: Get all the data
       tags:
-      - welcomeentity
+      - user
       x-method-getAll: "true"
-      x-eov-operation-handler: controllers/WelcomeentityController
-  /welcomeentity/getByParams:
+      x-eov-operation-handler: controllers/UserController
+  /user/getByParams:
     get:
-      operationId: getByParamswelcomeentity
+      operationId: getByParamsuser
       parameters:
       - description: the query based on which the search is performed
         explode: true
@@ -146,25 +146,25 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/welcomeentity'
+                  $ref: '#/components/schemas/user'
                 type: array
           description: successful operation
       summary: Get all the data based on user query
       tags:
-      - welcomeentity
+      - user
       x-method-get-by-params: "true"
-      x-eov-operation-handler: controllers/WelcomeentityController
+      x-eov-operation-handler: controllers/UserController
 components:
   schemas:
-    welcomeentity:
+    user:
       example:
+        firstName: firstName
         _id: _id
-        title: title
       properties:
         _id:
           type: string
-        title:
+        firstName:
           type: string
       required:
-      - title
+      - firstName
       type: object

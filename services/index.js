@@ -1,5 +1,5 @@
-const WelcomeentityService = require('./WelcomeentityService');
+const UserService = require('./UserService');
 
 module.exports = {
-  WelcomeentityService,
+  UserService,
 };

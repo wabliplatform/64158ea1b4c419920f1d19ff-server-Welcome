@@ -1,4 +1,4 @@
-const welcomeentity = require('./welcomeentity');
+const user = require('./user');
 
 module.exports = {
-  welcomeentity};
+  user};
