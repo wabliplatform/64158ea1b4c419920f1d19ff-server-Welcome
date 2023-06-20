@@ -6,7 +6,7 @@ const userSchema = new Schema({
 Underscoreid:String , 
 
 
-firstName:String 
+userName:String 
 
 
 
