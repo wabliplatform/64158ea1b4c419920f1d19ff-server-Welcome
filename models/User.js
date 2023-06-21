@@ -1,4 +1,5 @@
 
+const { UserUserImageSchema } =require('./UserUserImage');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -6,7 +7,12 @@ const userSchema = new Schema({
 Underscoreid:String , 
 
 
-userName:String 
+userName:String , 
+
+
+userImage:  
+UserUserImageSchema
+ 
 
 
 

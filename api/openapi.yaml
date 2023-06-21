@@ -158,6 +158,9 @@ components:
   schemas:
     user:
       example:
+        userImage:
+          data: data
+          name: name
         _id: _id
         userName: userName
       properties:
@@ -165,6 +168,20 @@ components:
           type: string
         userName:
           type: string
+        userImage:
+          $ref: '#/components/schemas/user_userImage'
       required:
+      - userImage
       - userName
       type: object
+    user_userImage:
+      example:
+        data: data
+        name: name
+      properties:
+        data:
+          type: string
+        name:
+          type: string
+      type: object
+      x-isSchemaOnly: "true"
